@@ -1,9 +1,41 @@
-import React from 'react'
+import React from "react";
 
-import '../../../node_modules/bootstrap/dist/css/bootstrap.css'
+import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
 function App() {
   return (
-    <h1 className="text-center">Hello World</h1>
+    <div className="container">
+      <div className="row">
+        <div className="todolist">
+          <h1>Todos</h1>
+          <ul className="list-unstyled">
+            <li className="ui-state-default">
+              <div className="checkbox">
+                <label>
+                  <input type="checkbox" value="" />
+                  Take out the trash
+                </label>
+              </div>
+            </li>
+            <li className="ui-state-default">
+              <div className="checkbox">
+                <label>
+                  <input type="checkbox" value="" />
+                  Buy bread
+                </label>
+              </div>
+            </li>
+            <li className="ui-state-default">
+              <div className="checkbox">
+                <label>
+                  <input type="checkbox" value="" />
+                  Teach penguins to fly
+                </label>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 }
 
