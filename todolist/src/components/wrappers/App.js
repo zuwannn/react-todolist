@@ -26,8 +26,9 @@ class App extends Component {
   }
 
   addNew(text){
+    let nextId = this.state.items.length + 1
     let item = {
-      id: this.state.items.length + 1,
+      id: nextId,
       text: text
     }
     let updatedList = this.state.items.concat([item])
@@ -44,7 +45,7 @@ class App extends Component {
           <TodoList 
             title={title} 
             items={this.state.items} 
-            addNew={this.addNew}
+            addNew={this.addNew.bind(this)}
           />
         </div>
       </div>
