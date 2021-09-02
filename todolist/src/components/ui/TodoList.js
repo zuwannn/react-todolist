@@ -1,6 +1,7 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 import Header from "../Header";
+import Footer from "../Footer";
 
 function TodoList(props) {
   const { title, items } = props;
@@ -12,6 +13,7 @@ function TodoList(props) {
             <TodoItem key={item.id} data={item}/>
           )}
       </ul>
+      <Footer />
     </div>
   );
 }
