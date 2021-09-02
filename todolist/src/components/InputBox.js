@@ -1,5 +1,5 @@
 import React from 'react'
-import KeyCode from 'keycode-js'
+import * as KeyCode from 'keycode-js'
 class InputBox extends React.Component{
     constructor(props){
         super(props)
