@@ -5,6 +5,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      filter: 'active',
       items: [
         {
           id: 1,
@@ -44,7 +45,7 @@ class App extends Component {
         <div className="row">
           <TodoList 
             title={title} 
-            items={this.state.items} 
+            {...this.state}
             addNew={this.addNew.bind(this)}
           />
         </div>
