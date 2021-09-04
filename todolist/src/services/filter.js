@@ -1,6 +1,6 @@
-const FILTER_ALL = 'all'
-const FILTER_ACTIVE = 'active'
-const FILTER_COMPLETED = 'completed'
+export const FILTER_ALL = 'all'
+export const FILTER_ACTIVE = 'active'
+export const FILTER_COMPLETED = 'completed'
 
 export function applyFilter(list, filter) {
     switch(filter){
@@ -11,4 +11,12 @@ export function applyFilter(list, filter) {
       default:
         return list
     }
+}
+
+export function getOptions() {
+    return{
+        [FILTER_ALL]: 'All',
+        [FILTER_ACTIVE]: 'Active',
+        [FILTER_COMPLETED]: 'Completed'
+    }    
 }
