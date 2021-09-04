@@ -38,6 +38,9 @@ class App extends Component {
       items: updatedList
     })
   }
+  changeFilter(filter){
+    this.setState({filter})
+  }
   render(){
     let title = 'Things to do'
     return(
@@ -47,6 +50,7 @@ class App extends Component {
             title={title} 
             {...this.state}
             addNew={this.addNew.bind(this)}
+            changeFilter={this.changeFilter.bind(this)}
           />
         </div>
       </div>

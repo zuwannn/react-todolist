@@ -4,7 +4,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 
 function TodoList(props) {
-  const { title, items, addNew, filter } = props;
+  const { title, items, addNew, filter, changeFilter } = props;
   const { count } = items.length
   return (
     <div className="todolist">
@@ -14,7 +14,7 @@ function TodoList(props) {
             <TodoItem key={item.id} data={item}/>
           )}
       </ul>
-      <Footer count={count} filter={filter} />
+      <Footer {...{count,filter, changeFilter}} />
     </div>
   );
 }
