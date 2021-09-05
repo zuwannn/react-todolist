@@ -13,9 +13,15 @@ function TodoList(props) {
   return (
     <div className="todolist">
       <Header title={title} addNew={addNew}/>
-      <ul className="list-unstyled">
-        {filteredList.map(item => <TodoItem key={item.id} data={item}/>)} 
-      </ul>
+      {filteredList.length > 0 
+        ? (
+          <ul className="list-unstyled">
+            {filteredList.map(item => <TodoItem key={item.id} data={item}/>)} 
+          </ul>
+        )
+        : <p className="alert alert-info">There are no items.</p>
+      }
+      
       <Footer {...{count,filter, changeFilter}} />
     </div>
   );
