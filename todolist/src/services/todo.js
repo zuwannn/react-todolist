@@ -1,4 +1,4 @@
-/* 
+/** 
     Get the list of todo items.
     @return {Array}
 */
@@ -23,11 +23,30 @@ export function getAll() {
     ]
 }
 
-export function createNew(text) {
-    let nextId = this.state.items.length + 1
-    let item = {
-        id: nextId,
-        text: text
-    }
-    return item
+/**
+  A counter to generate a unique id for a todo item.
+  Can remove this logic when the todo is created using backend/database logic.
+  @type {Number}
+ */
+
+let todoCounter = 1
+
+function getNextId() {
+  return getAll().length + todoCounter++
+}
+
+/**
+ * Adds a new item on the list and returns the new updated list (immutable).
+ *
+  @param {Array} list
+  @param {Object} data
+  @return {Array}
+ */
+
+export function addToList(list, data) {
+  let item = Object.assign({
+    id: getNextId()
+  }, data)
+
+  return list.concat([item])
 }

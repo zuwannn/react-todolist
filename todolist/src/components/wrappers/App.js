@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TodoList from "../ui/TodoList";
 import {FILTER_ACTIVE} from '../../services/filter'
-import {getAll, createNew} from '../../services/todo'
+import {getAll, addToList} from '../../services/todo'
 class App extends Component {
   constructor() {
     super();
@@ -12,8 +12,7 @@ class App extends Component {
   }
 
   addNew(text){
-    let item = createNew(text)
-    let updatedList = this.state.items.concat([item])
+    let updatedList = addToList(this.state.items, {text, completed:false})
 
     this.setState({
       items: updatedList
