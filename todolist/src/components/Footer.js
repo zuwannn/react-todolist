@@ -13,7 +13,7 @@ export default function Footer(props) {
         {`${count} items left`}
       </div>
       <div className="pull-right">
-          <Filter filter={filter} change={changeFilter}/>
+          <Filter {...{filter, changeFilter}}/>
       </div>
     </div>
   );
