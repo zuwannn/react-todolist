@@ -1,3 +1,4 @@
+import update from 'immutability-helper'
 /** 
     Get the list of todo items.
     @return {Array}
@@ -23,7 +24,20 @@ export function getAll() {
     ]
 }
 
+export function getItemById(itemId) {
+  return getAll().find(item => item.id === itemId)
+}
 
+export function updateStatus(items, itemId, completed) {
+  let index = items.findIndex(item => item.id === itemId)
+
+  // returns a new list of data with updated item
+  return update(items, {
+    [index]: {
+      completed: {$set: completed}
+    }
+  })
+}
 
 /**
   A counter to generate a unique id for a todo item.
