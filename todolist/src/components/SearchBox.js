@@ -4,7 +4,7 @@ export default function SearchBox(props) {
     const {query, setSearchQuery} = props
 
     return(
-        <input 
+        <input autoFocus
             type="text"
             className="from-control search"
             value={query}
