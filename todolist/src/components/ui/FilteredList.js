@@ -1,5 +1,5 @@
 import React from "react";
-import TodoItem from '../components/ui/TodoItem'
+import TodoItem from './TodoItem'
 
 export default function FilteredList(props) {
     const {items, changeStatus} = props
