@@ -19,10 +19,11 @@ class KeyStrokeHandler extends Component {
         }
     }
     render(){
-        return 
+        return( 
         <div>
             {wrapChildrenWith(this.props.children, this.props)}
         </div>
+        )
     }
 }
 export default KeyStrokeHandler

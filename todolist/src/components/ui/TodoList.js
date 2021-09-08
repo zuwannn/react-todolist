@@ -1,4 +1,5 @@
 import React from "react";
+import Info from "../Info";
 import Header from "../Header";
 import Footer from "../Footer";
 import FilteredList from "../FilteredList";
@@ -13,8 +14,9 @@ export default function TodoList(props) {
   return(
     <div className="todolist">
       <Header {...{addNew, mode, query, setSearchQuery}}/>
-    <FilteredList {...{items,changeStatus}}/>
+        <FilteredList {...{items,changeStatus}}/>
       <Footer {...{count, filter, changeFilter, mode, changeMode}}/>
+      <Info {...{mode}} />
     </div>
   )
 } 
